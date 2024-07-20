@@ -1,0 +1,143 @@
+[
+  {
+    "title": "[TS-1 SLOT] Test 1:Slot overlaps with start of working day",
+    "workingDayStart": "08:00",
+    "workingDayEnd": "17:00",
+    "slots": [
+      {
+        "starts_at": "07:00",
+        "ends_at": "09:00",
+        "expected": false,
+        "type": "PROCEDURE"
+      }
+    ]
+  },
+  {
+    "title": "[TS-1 SLOT] Test 2:Slot inside working day",
+    "workingDayStart": "08:00",
+    "workingDayEnd": "17:00",
+    "slots": [
+      {
+        "starts_at": "11:00",
+        "ends_at": "16:00",
+        "expected": false,
+        "type": "PROCEDURE"
+      }
+    ]
+  },
+  {
+    "title": "[TS-1 SLOT] Test 3: Slot overlaps with end of working day",
+    "workingDayStart": "08:00",
+    "workingDayEnd": "17:00",
+    "slots": [
+      {
+        "starts_at": "16:00",
+        "ends_at": "19:00",
+        "expected": false,
+        "type": "PROCEDURE"
+      }
+    ]
+  },
+  {
+    "title": "[TS-1 SLOT] Test 4: Slot for all day",
+    "workingDayStart": "08:00",
+    "workingDayEnd": "17:00",
+    "slots": [
+      {
+        "starts_at": "08:00",
+        "ends_at": "17:00",
+        "expected": false,
+        "type": "PROCEDURE"
+      }
+    ]
+  },
+  {
+    "title": "[TS-1 SLOT] Test 5: Slot starts before working day and ends after working day",
+    "workingDayStart": "08:00",
+    "workingDayEnd": "17:00",
+    "slots": [
+      {
+        "starts_at": "07:30",
+        "ends_at": "17:30",
+        "expected": false,
+        "type": "PROCEDURE"
+      }
+    ]
+  },
+  {
+    "title": "[TS-N SLOTS] Test 1: One of the slots overlaps with start of working day",
+    "workingDayStart": "08:00",
+    "workingDayEnd": "17:00",
+    "slots": [
+      {
+        "starts_at": "07:30",
+        "ends_at": "08:30",
+        "expected": false,
+        "type": "PROCEDURE"
+      },
+      {
+        "starts_at": "11:00",
+        "ends_at": "16:30",
+        "expected": false,
+        "type": "PROCEDURE"
+      }
+    ]
+  },
+  {
+    "title": "[TS-N SLOTS] Test 2: All slots inside working day",
+    "workingDayStart": "08:00",
+    "workingDayEnd": "17:00",
+    "slots": [
+      {
+        "starts_at": "08:30",
+        "ends_at": "09:30",
+        "expected": false,
+        "type": "PROCEDURE"
+      },
+      {
+        "starts_at": "11:00",
+        "ends_at": "16:30",
+        "expected": false,
+        "type": "PROCEDURE"
+      }
+    ]
+  },
+  {
+    "title": "[TS-N SLOTS] Test 3: One of the slots overlaps with end of working day",
+    "workingDayStart": "08:00",
+    "workingDayEnd": "17:00",
+    "slots": [
+      {
+        "starts_at": "08:30",
+        "ends_at": "09:30",
+        "expected": false,
+        "type": "PROCEDURE"
+      },
+      {
+        "starts_at": "16:30",
+        "ends_at": "17:30",
+        "expected": false,
+        "type": "PROCEDURE"
+      }
+    ]
+  },
+  {
+    "title": "[TS-N SLOTS] Test 4: Day is full",
+    "workingDayStart": "08:00",
+    "workingDayEnd": "17:00",
+    "slots": [
+      {
+        "starts_at": "08:00",
+        "ends_at": "13:00",
+        "expected": false,
+        "type": "PROCEDURE"
+      },
+      {
+        "starts_at": "13:00",
+        "ends_at": "17:00",
+        "expected": false,
+        "type": "PROCEDURE"
+      }
+    ]
+  }
+]
